@@ -1,0 +1,72 @@
+﻿<Window x:Class="Pixel_Art.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pixel_Art"
+        mc:Ignorable="d"
+        Icon="./assets/icon.png"
+        Title="Pixel Art" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="AliceBlue"/>
+            <Setter Property="BorderBrush" Value="AntiqueWhite"/>
+        </Style>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Margin" Value="10, 20, 0, 0"/>
+            <Setter Property="Height" Value="160"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="Border" x:Key="BordeColores">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="Height" Value="270"/>
+        </Style>
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="{x:Type DockPanel}" x:Key="OpcionesColores">
+            <Setter Property="Margin" Value="0, 20, 10, 0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}" x:Key="Colores">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+    </Window.Resources>
+    
+    <DockPanel>
+        <GroupBox Header="Nuevo" DockPanel.Dock="Left">
+            <StackPanel>
+                <Button Tag="15" Click="AjustarTamaño">Pequeño</Button>
+                <Button Tag="30" Click="AjustarTamaño">Mediano</Button>
+                <Button Tag="45" Click="AjustarTamaño">Grande</Button>
+            </StackPanel>
+        </GroupBox>
+        <DockPanel DockPanel.Dock="Right" Style="{StaticResource OpcionesColores}">
+            <Button DockPanel.Dock="Bottom">Rellenar</Button>
+            <Border Style="{StaticResource BordeColores}">
+                <StackPanel Style="{StaticResource Colores}">
+                    <RadioButton>Negro</RadioButton>
+                    <RadioButton>Blanco</RadioButton>
+                    <RadioButton>Rojo</RadioButton>
+                    <RadioButton>Verde</RadioButton>
+                    <RadioButton>Azul</RadioButton>
+                    <RadioButton>Amarillo</RadioButton>
+                    <RadioButton>Naranja</RadioButton>
+                    <RadioButton>Rosa</RadioButton>
+                    <RadioButton>Personalizado</RadioButton>
+                    <TextBox></TextBox>
+                </StackPanel>
+            </Border>
+            
+        </DockPanel>
+        <Grid x:Name="lienzo_Grid"></Grid>
+    </DockPanel>
+</Window>
