@@ -44,29 +44,29 @@
     <DockPanel>
         <GroupBox Header="Nuevo" DockPanel.Dock="Left">
             <StackPanel>
-                <Button Tag="15" Click="AjustarTamaño">Pequeño</Button>
-                <Button Tag="30" Click="AjustarTamaño">Mediano</Button>
-                <Button Tag="45" Click="AjustarTamaño">Grande</Button>
+                <Button Tag="10" Click="AjustarTamaño">Pequeño</Button>
+                <Button Tag="15" Click="AjustarTamaño">Mediano</Button>
+                <Button Tag="20" Click="AjustarTamaño">Grande</Button>
             </StackPanel>
         </GroupBox>
         <DockPanel DockPanel.Dock="Right" Style="{StaticResource OpcionesColores}">
-            <Button DockPanel.Dock="Bottom">Rellenar</Button>
+            <Button DockPanel.Dock="Bottom" Click="Button_Click">Rellenar</Button>
             <Border Style="{StaticResource BordeColores}">
                 <StackPanel Style="{StaticResource Colores}">
-                    <RadioButton>Negro</RadioButton>
-                    <RadioButton>Blanco</RadioButton>
-                    <RadioButton>Rojo</RadioButton>
-                    <RadioButton>Verde</RadioButton>
-                    <RadioButton>Azul</RadioButton>
-                    <RadioButton>Amarillo</RadioButton>
-                    <RadioButton>Naranja</RadioButton>
-                    <RadioButton>Rosa</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#000000">Negro</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#FFFFFF">Blanco</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#FF0000">Rojo</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#008000">Verde</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#0000FF">Azul</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#FFFF00">Amarillo</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#FF8000 ">Naranja</RadioButton>
+                    <RadioButton Click="RadioButton_Click" Tag="#FF0080 ">Rosa</RadioButton>
                     <RadioButton>Personalizado</RadioButton>
-                    <TextBox></TextBox>
+                    <TextBox x:Name="personalizado_textBox"></TextBox>
                 </StackPanel>
             </Border>
-            
+
         </DockPanel>
-        <Grid x:Name="lienzo_Grid"></Grid>
+        <Grid x:Name="lienzo_Grid" ShowGridLines="False"/>
     </DockPanel>
 </Window>
