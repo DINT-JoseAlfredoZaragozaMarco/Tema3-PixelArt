@@ -42,13 +42,17 @@
     </Window.Resources>
     
     <DockPanel>
-        <GroupBox Header="Nuevo" DockPanel.Dock="Left">
-            <StackPanel>
-                <Button Tag="10" Click="AjustarTamaño">Pequeño</Button>
-                <Button Tag="15" Click="AjustarTamaño">Mediano</Button>
-                <Button Tag="20" Click="AjustarTamaño">Grande</Button>
-            </StackPanel>
-        </GroupBox>
+        <DockPanel DockPanel.Dock="Left">
+            <GroupBox Header="Nuevo" DockPanel.Dock="Top" Margin="10">
+                <StackPanel>
+                    <Button Tag="10" Click="AjustarTamaño">Pequeño</Button>
+                    <Button Tag="15" Click="AjustarTamaño">Mediano</Button>
+                    <Button Tag="20" Click="AjustarTamaño">Grande</Button>
+                </StackPanel>
+            </GroupBox>
+            <CheckBox x:Name="guia_CheckBox" VerticalAlignment="Bottom" Margin="10" Checked="CheckBox_Checked">Mostrar Guía</CheckBox>
+        </DockPanel>
+        
         <DockPanel DockPanel.Dock="Right" Style="{StaticResource OpcionesColores}">
             <Button DockPanel.Dock="Bottom" Click="Button_Click">Rellenar</Button>
             <Border Style="{StaticResource BordeColores}">
@@ -61,8 +65,8 @@
                     <RadioButton Click="RadioButton_Click" Tag="#FFFF00">Amarillo</RadioButton>
                     <RadioButton Click="RadioButton_Click" Tag="#FF8000 ">Naranja</RadioButton>
                     <RadioButton Click="RadioButton_Click" Tag="#FF0080 ">Rosa</RadioButton>
-                    <RadioButton>Personalizado</RadioButton>
-                    <TextBox x:Name="personalizado_textBox"></TextBox>
+                    <RadioButton x:Name="personalizado_RadioButton" Checked="Radio_Button_Personalizado">Personalizado</RadioButton>
+                    <TextBox x:Name="personalizado_textBox" KeyDown="personalizado_textBox_KeyDown"></TextBox>
                 </StackPanel>
             </Border>
 
