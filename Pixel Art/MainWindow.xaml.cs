@@ -78,7 +78,8 @@ namespace Pixel_Art
                         border.MouseLeftButtonDown += Border_MouseLeftButtonDown;
                         border.MouseEnter += Border_MouseEnter;
                         border.Background = Brushes.White;
-                        
+                        border.BorderBrush = Brushes.Black;
+                        border.BorderThickness = thickness;
 
                         Grid.SetRow(border, i);
                         Grid.SetColumn(border, j);
@@ -147,32 +148,6 @@ namespace Pixel_Art
             {
                 Color col = (Color)ColorConverter.ConvertFromString(personalizado_textBox.Text);
                 this.brush = new SolidColorBrush(col);
-            }
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            int value = lienzo_Grid.RowDefinitions.Count;
-            if (guia_CheckBox.IsChecked == true)
-            {
-                for (int i = 0; i < value; i++)
-                {
-                    for (int j = 0; j < value; j++)
-                    {
-                        Border border = new Border();
-                        border.BorderBrush = Brushes.Black;
-                        border.BorderThickness = thickness;
-
-                        Grid.SetRow(border, i);
-                        Grid.SetColumn(border, j);
-
-                        lienzo_Grid.Children.Add(border);
-                    }
-                }
-            }
-            else
-            {
-
             }
         }
     }
